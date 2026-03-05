@@ -130,7 +130,54 @@
 
 /* ── Base Styles ─────────────────────────────────────────────────────── */
 body {
-  background: var(--strand-background);
+  background: #FFFFFF;
   color: var(--strand-text-primary);
   font-family: var(--font-system);
+}
+
+/* ── Non-draggable images ────────────────────────────────────────────── */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+a img,
+button img {
+  pointer-events: auto;
+}
+
+/* ── Masterbrand Gradient ────────────────────────────────────────────── */
+:root {
+  --strand-gradient-brand: linear-gradient(90deg, #60E21B, #FABA17, #FFB0CD);
+  --strand-gradient-slide: linear-gradient(90deg, #16DF84, #00D67E);
+}
+
+.bg-gradient-brand {
+  background: var(--strand-gradient-brand);
+}
+
+.text-gradient-brand {
+  background: var(--strand-gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hover utilities ─────────────────────────────────────────────────── */
+.hover-lift {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.hover-fade {
+  transition: opacity 200ms ease;
+}
+
+.hover-fade:hover {
+  opacity: 0.8;
 }

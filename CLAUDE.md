@@ -62,6 +62,15 @@ It contains the complete Strand design system specification:
 6. **Icons** are 16×16 SVG from `strand/icons/`, stroke-based with `currentColor`
 7. **Content max width** is 1200px, chat max is 800px, header is 56px
 
+## Design Philosophy
+
+8. **No emoji in UI** — never use emoji in buttons, labels, headings, or body text
+9. **White-majority aesthetic** — default background is pure white (#FFFFFF). Use #F4F3F3 sparingly for card accents. Think TwelveLabs.io, Linear, Vercel — not Bootstrap or Material UI.
+10. **No login screens** — sample apps use API keys via env vars or inline input, not auth flows
+11. **Professional, purposeful design** — every component must demonstrate real TwelveLabs API impact (search results, generated text, video analysis). No decorative filler.
+12. **Minimalistic layout** — generous whitespace, thin borders (#E8E7E5), charcoal pill buttons with arrow icons (↗)
+13. **Content-first** — lead with the user's content (video, search results, generated output), not settings panels
+
 ## When Generating Components
 
 - Always check `docs/STRANDS_AGENT_RULES.md` for the correct token

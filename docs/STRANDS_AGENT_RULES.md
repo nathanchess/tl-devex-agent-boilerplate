@@ -40,9 +40,30 @@ This is the **TwelveLabs DevEx Agent Boilerplate** — a repository that the Twe
 | MB Orange | `#FABA17` | Warnings, Generate product |
 | MB Peach | `#FFB592` | Warm accent |
 | MB Pink | `#FFB0CD` | Gradient endpoint |
-| **Gradient** | `linear-gradient(90deg, #60E21B, #FABA17, #FFB0CD)` | Hero banners, CTAs |
+| **Gradient** | `linear-gradient(90deg, #60E21B, #FABA17, #FFB0CD)` | **Sparingly** — see below |
 
 Each has `-dark` and `-light` variants (see `strand/tokens/colors.json`).
+
+#### Masterbrand Gradient — Usage Rules
+
+The gradient `linear-gradient(90deg, #60E21B, #FABA17, #FFB0CD)` is available as:
+
+| CSS Class | CSS Variable | Effect |
+|-----------|-------------|--------|
+| `bg-gradient-brand` | `var(--strand-gradient-brand)` | Gradient background |
+| `text-gradient-brand` | — | Gradient text fill (via background-clip) |
+
+**Usage: sparingly only.** The gradient should be used for:
+- Small accent bars or dividers (e.g., a 3px vertical bar next to a heading)
+- Rare button backgrounds on primary hero CTAs (not every button)
+- Occasional gradient text for emphasis headings (not body text)
+
+**Do NOT use the gradient for:**
+- Full section backgrounds
+- Every button or card
+- Borders or large areas of the page
+
+The brand gradient is a signature element — overusing it dilutes its impact. White and charcoal should dominate the page.
 
 ### 2.3 Gray Ramp
 
@@ -270,7 +291,40 @@ Add `class="dark"` to `<html>` to activate. All semantic UI colors swap automati
 
 ---
 
-## 11. Mandatory Rules for AI Agents
+## 11. Design Philosophy
+
+All sample apps built with this boilerplate must follow the TwelveLabs visual identity:
+
+### 11.1 Visual Aesthetic
+
+- **White-majority layout.** Primary background is pure white (`#FFFFFF`). Use `#F4F3F3` (gray-50) sparingly for subtle section differentiation or card backgrounds. The overall feel must be clean, spacious, and premium.
+- **Minimalistic.** Generous whitespace. Avoid clutter. Every element must earn its place on the page. If a section or component does not serve a clear purpose, remove it.
+- **High-tech startup vibes.** Think TwelveLabs.io, Linear, Vercel — not Bootstrap or Material UI. Thin borders (`#E8E7E5`), subtle shadows, restrained color usage.
+- **Typography-driven hierarchy.** Use large bold headings with tight tracking (-2px to -3px letter-spacing on hero text). Body text is muted gray (`#6B6966`), not black.
+- **Charcoal pill buttons** with arrow icons (`↗`) for primary CTAs, matching the TwelveLabs.io pattern. Pill radius (`rounded-full`) for primary and outline buttons.
+- **Border-separated sections.** Use `border-t border-[#E8E7E5]` to divide page sections rather than background color changes.
+
+### 11.2 UI/UX Principles
+
+- **No login required.** All sample apps must be usable without authentication flows. The user provides their API key inline or via environment variables.
+- **No emoji in UI.** Never use emoji in buttons, labels, headings, or body text. Use SVG icons from `strand/icons/` instead.
+- **Professional design.** Treat every sample app as a production product page, not a hackathon demo. It should look like a real UI/UX designer built it.
+- **Meaningful components only.** Do not add decorative components that serve no purpose. Every card, section, and interactive element must showcase real TwelveLabs API impact (search results, generated text, video analysis, embeddings).
+- **Content-first layout.** Lead with the user's content (video, search results, generated output) — not settings panels or configuration forms.
+- **Responsive but desktop-first.** Optimize for 1200px+ viewports. Gracefully collapse for mobile.
+- **Non-draggable images.** All `<img>` elements must have `draggable="false"`. The global CSS already sets `-webkit-user-drag: none` and `user-select: none`.
+- **Minimalistic hover effects.** Use `hover-lift` (translateY -2px + subtle shadow) on interactive cards and code blocks. Use border color transitions on framework cards. Keep all hover animations under 200ms.
+- **Brand gradient: sparingly.** The masterbrand gradient (`bg-gradient-brand`) should only be used for small accent bars, rare hero CTA backgrounds, or occasional gradient text. Never for full section backgrounds.
+
+### 11.3 Reference Sites
+
+Study these for correct aesthetic:
+- [twelvelabs.io](https://www.twelvelabs.io/) — white backgrounds, charcoal buttons with arrows, generous spacing, bold sans-serif type
+- [playground.twelvelabs.io](https://playground.twelvelabs.io/) — product UI with sidebar navigation, card-based layout
+
+---
+
+## 12. Mandatory Rules for AI Agents
 
 1. **NEVER hardcode hex color values.** Always use Strand Tailwind classes or CSS variables.
 2. **Use semantic color names** (`bg-background`, `text-text-primary`, `bg-accent`) — not raw gray/brand tokens — for UI surfaces and text.
@@ -282,6 +336,10 @@ Add `class="dark"` to `<html>` to activate. All semantic UI colors swap automati
 8. **Icons must be 16×16 SVG** from `strand/icons/` or the icon manifest. Use `currentColor` for stroke.
 9. **Dark mode must use `class="dark"`** strategy, not `prefers-color-scheme`.
 10. **Content max width is 1200px.** Chat containers max at 800px. Header height is 56px.
+11. **No emoji in UI.** Do not use emoji characters in any user-facing text, buttons, or labels.
+12. **White-majority aesthetic.** Default page background is `#FFFFFF`. Reserve off-white/gray for card backgrounds and section accents only.
+13. **No login screens.** Sample apps are API-key-driven, not auth-gated. Users provide keys via env vars or inline input.
+14. **Professional, purposeful design.** Every component must demonstrate real TwelveLabs API functionality.
 
 ---
 

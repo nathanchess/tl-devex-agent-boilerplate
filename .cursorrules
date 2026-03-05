@@ -50,3 +50,9 @@ This file is the Single Source of Truth (SSOT) for all design tokens, color valu
 4. Use only the defined button variants from buttons.json
 5. Dark mode uses class strategy, not prefers-color-scheme
 6. Icons are 16×16 SVG with currentColor stroke
+7. No emoji in UI — never use emoji in buttons, labels, headings, or body text
+8. White-majority aesthetic — default background is pure white (#FFFFFF), use #F4F3F3 sparingly for card accents
+9. No login screens — sample apps use API keys via env vars or inline input, not auth flows
+10. Professional, purposeful design — every component must demonstrate real TwelveLabs API impact
+11. Minimalistic layout — generous whitespace, thin borders (#E8E7E5), charcoal pill buttons with arrow icons
+12. Study twelvelabs.io for correct aesthetic — white backgrounds, bold sans-serif type, restrained color

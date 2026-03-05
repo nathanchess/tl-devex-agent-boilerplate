@@ -60,6 +60,15 @@ You must enforce these rules on every UI generation or modification:
 - Use `class="dark"` on `<html>` — **NEVER** `prefers-color-scheme`.
 - All semantic UI colors auto-swap via CSS custom properties.
 
+### Design Philosophy
+- **No emoji in UI.** Never use emoji in buttons, labels, headings, or body text. Use SVG icons from `strand/icons/` instead.
+- **White-majority aesthetic.** Default background is pure white (`#FFFFFF`). Use `#F4F3F3` sparingly for card accents. Think TwelveLabs.io, Linear, Vercel — not Bootstrap or Material UI.
+- **No login screens.** Sample apps use API keys via env vars or inline input, not auth flows.
+- **Professional, purposeful design.** Every component must demonstrate real TwelveLabs API impact (search results, generated text, video analysis, embeddings). No decorative filler.
+- **Minimalistic layout.** Generous whitespace, thin borders (`#E8E7E5`), charcoal pill buttons with arrow icons.
+- **Content-first.** Lead with the user's content (video, search results, generated output) — not settings panels or configuration forms.
+- **Typography-driven hierarchy.** Large bold headings with tight tracking. Body text is muted gray (`#6B6966`), not black.
+
 ### Border Radius
 - `sm` (4px), `md` (8px), `lg` (12px), `xl` (16px), `2xl` (24px), `full` (pill).
 - Hero elements: use 30% of shortest side.
@@ -96,3 +105,8 @@ Before returning any UI code, verify:
 - [ ] Dark mode uses class strategy
 - [ ] Icons are from strand/icons/ at 16×16 with currentColor
 - [ ] Content respects max-width constraints (1200px / 800px)
+- [ ] No emoji in any user-facing text
+- [ ] White-majority background (pure white #FFFFFF default)
+- [ ] No login/auth flows — API key via env var or inline input
+- [ ] Every component serves a real purpose (no decorative filler)
+- [ ] Minimalistic layout with generous whitespace
