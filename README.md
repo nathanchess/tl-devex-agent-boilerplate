@@ -1,5 +1,7 @@
 # TwelveLabs DevEx Agent Boilerplate
 
+![TwelveLabs DevEx Agent Boilerplate](public/thumbnail.png)
+
 An AI-agent-optimized boilerplate for rapidly building TwelveLabs sample apps using the internal **Strand** design system. Pre-configured for **Cursor**, **Claude Code**, and **Antigravity**.
 
 ---
