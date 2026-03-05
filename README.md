@@ -14,7 +14,7 @@ An AI-agent-optimized boilerplate for rapidly building TwelveLabs sample apps us
 ### 1. Clone & Install
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/nathanchess/tl-devex-agent-boilerplate.git
 cd devex-agent-boilerplate
 npm install
 ```
